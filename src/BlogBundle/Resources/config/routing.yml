@@ -1,4 +1,3 @@
-# src/Blogger/BlogBundle/Resources/config/routing.yml
 blog_homepage:
     pattern:  /
     defaults: { _controller: BlogBundle:Page:index }
@@ -10,3 +9,9 @@ blog_about:
     defaults: { _controller: BlogBundle:Page:about }
     requirements:
         _method:  GET
+
+blog_contact:
+    pattern:  /contact
+    defaults: { _controller: BlogBundle:Page:contact }
+    requirements:
+        _method:  GET|POST

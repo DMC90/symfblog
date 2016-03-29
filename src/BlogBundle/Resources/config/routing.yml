@@ -4,3 +4,9 @@ blog_homepage:
     defaults: { _controller: BlogBundle:Page:index }
     requirements:
         _method:  GET
+
+blog_about:
+    pattern:  /about
+    defaults: { _controller: BlogBundle:Page:about }
+    requirements:
+        _method:  GET

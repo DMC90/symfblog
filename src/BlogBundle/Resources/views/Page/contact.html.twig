@@ -8,6 +8,12 @@
         <h1>Contact Symfblog</h1>
     </header>
 
+    {% for noticeMessage in app.session.flashbag.get('email-notice') %}
+        <div class="blogger-notice">
+            {{ noticeMessage }}
+        </div>
+    {% endfor %}
+
     <p>Want to contact Symfblog?</p>
 
     <form action="{{ path('blog_contact') }}" method="post" {{ form_enctype(form) }} class="blogger">

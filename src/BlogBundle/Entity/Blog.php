@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="blog")
+ * @ORM\HasLifecycleCallbacks
  */
 class Blog
 {
@@ -54,7 +55,20 @@ class Blog
      */
     protected $updated;
 
-    
+    public function __construct()
+    {
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime());
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function setUpdateValue()
+    {
+        $this->setUpdated(new \DateTime());
+    }
+
 
 
     /**

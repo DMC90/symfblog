@@ -11,7 +11,19 @@ class PageController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('BlogBundle:Page:index.html.twig');
+        /* var @em Doctrine\ORM\EntityManager */
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $blogs = $em->createQueryBuilder()
+            ->select('b')
+            ->from('BlogBundle:Blog', 'b')
+            ->addOrderBy('b.created', 'DESC')
+            ->getQuery()
+            ->getResult();
+
+        return $this->render('BlogBundle:Page:index.html.twig', [
+            'blogs' => $blogs
+        ]);
     }
 
     public function aboutAction()

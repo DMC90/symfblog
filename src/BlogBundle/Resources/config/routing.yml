@@ -16,7 +16,7 @@ blog_contact:
     requirements:
         _method:  GET|POST
 
-blow_show:
+blog_show:
   pattern: /{id}
   defaults: { _controller: BlogBundle:Blog:show }
   requirements:

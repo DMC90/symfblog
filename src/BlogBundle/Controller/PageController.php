@@ -14,6 +14,10 @@ class PageController extends Controller
         /* var @em Doctrine\ORM\EntityManager */
         $em = $this->getDoctrine()->getEntityManager();
 
+        /* @var $blogs \BlogBundle\Entity\Repository\BlogRepository  */
+        $blogs = $em->getRepository('BlogBundle:Blog');
+        $blogs->getLatestBlogs();
+
         $blogs = $em->createQueryBuilder()
             ->select('b')
             ->from('BlogBundle:Blog', 'b')

@@ -11,7 +11,9 @@ class BlogController extends Controller
      */
     public function indexAction($name)
     {
-        return $this->render('BlogBundle:Default:index.html.twig', ['name' => $name]);
+        return $this->render('BlogBundle:Default:index.html.twig', [
+            'name' => $name
+        ]);
     }
 
     /**
@@ -31,9 +33,9 @@ class BlogController extends Controller
         $comments = $em->getRepository('BlogBundle:Comment')
                         ->getCommentsForBlog($blog->getId());
 
-        return $this->render('BlogBundle:Blog:show.html.twig', array(
+        return $this->render('BlogBundle:Blog:show.html.twig', [
             'blog'      => $blog,
             'comments'   => $comments
-        ));
+        ]);
     }
 }

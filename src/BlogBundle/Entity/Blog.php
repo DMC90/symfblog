@@ -148,8 +148,12 @@ class Blog
      *
      * @return string 
      */
-    public function getBlog()
+    public function getBlog($length = null)
     {
+        if ($length && $length > 0) {
+            return substr($this->blog, 0, $length);
+        }
+
         return $this->blog;
     }
 

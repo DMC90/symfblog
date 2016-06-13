@@ -44,9 +44,10 @@ class CommentController extends Controller
             $em->persist($comment);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('blog_show',
-                    ['id' => $comment->getBlog()->getId()]) .
-                '#comment-' . $comment->getId()
+            return $this->redirect($this->generateUrl('blog_show', [
+                'id' => $comment->getBlog()->getId(),
+                'slug'  => $comment->getBlog()->getSlug()
+              ]) . '#comment-' . $comment->getId()
             );
         }
 

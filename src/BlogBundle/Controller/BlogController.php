@@ -8,6 +8,7 @@ class BlogController extends Controller
 {
     /**
      * Renders index html
+     * @param $name
      */
     public function indexAction($name)
     {
@@ -18,8 +19,10 @@ class BlogController extends Controller
 
     /**
      * Show a blog entry
+     * @param $id
+     * @param $slug
      */
-    public function showAction($id)
+    public function showAction($id, $slug)
     {
         /* var @em Doctrine\ORM\EntityManager */
         $em = $this->getDoctrine()->getEntityManager();

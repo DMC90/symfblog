@@ -8,8 +8,12 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     {% block stylesheets %}
+        {% stylesheets
+        'css/screen.css'
+        %}
+        <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+        {% endstylesheets %}
         <link href='https://fonts.googleapis.com/css?family=Lato:100,300,100italic,300italic' rel='stylesheet' type='text/css'>
-        <link href="{{ asset('css/screen.css') }}" type="text/css" rel="stylesheet" />
     {% endblock %}
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
 </head>

@@ -13,3 +13,5 @@ parameters:
     mailer_password: password
 
     secret: not so secret
+
+    blogger_blog.comments.latest_comment_limit: 10

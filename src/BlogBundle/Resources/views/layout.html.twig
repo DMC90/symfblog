@@ -1,9 +1,14 @@
 {% extends '::base.html.twig' %}
 
 {% block stylesheets %}
-    {{ parent() }}
-    <link href="{{ asset('bundles/blog/css/blog.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('bundles/blog/css/sidebar.css') }}" type="text/css" rel="stylesheet" />
+    {{ parent () }}
+
+    {% stylesheets
+    '@BlogBundle/Resources/public/css/blog.css'
+    '@BlogBundle/Resources/public/css/sidebar.css'
+    %}
+    <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
 {% endblock %}
 
 {% block sidebar %}
